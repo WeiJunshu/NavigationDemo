@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NavigationDemo</string>
+    <string name="start_navigation">Start Navigation</string>
+    <string name="total_time">Total Time:</string>
+    <string name="total_distance">Total Distance:</string>
+    <string name="permission_denied">Location permission denied</string>
+    <string name="manually_turn_on_permission">Location permission is permanently denied, please go to settings manually to turn it on.</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="select_destination_tip">Please select a destination on the map first.</string>
+    <string name="no_location_tip">Positioning is abnormal, please check whether GPS or network is turned on.</string>
+
+</resources>

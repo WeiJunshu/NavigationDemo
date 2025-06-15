@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="30dp"
+    android:height="30dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 外部圆环 -->
+    <path
+        android:fillColor="#ffacacac"
+        android:pathData="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2Z"
+        android:fillAlpha="0.2" />
+
+    <!-- 内部圆点 -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M12,8A4,4 0 1,0 16,12A4,4 0 0,0 12,8Z" />
+
+</vector>
