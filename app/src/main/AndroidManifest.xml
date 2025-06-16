@@ -41,17 +41,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.amap.api.navi.AmapRouteActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name=".activity.NavigationResultActivity"
+            android:name=".activity.NaviResultActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/Theme.NavigationDemo" />
 
-
+        <activity
+            android:name=".activity.NaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.NavigationDemo" />
     </application>
 
 </manifest>

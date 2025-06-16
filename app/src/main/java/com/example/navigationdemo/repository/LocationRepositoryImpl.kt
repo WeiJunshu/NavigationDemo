@@ -1,7 +1,6 @@
 package com.example.navigationdemo.repository
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.amap.api.location.AMapLocationClient
@@ -35,14 +34,7 @@ class LocationRepositoryImpl @Inject constructor(
 
     private val client: AMapLocationClient by lazy {
         AMapLocationClient(context).apply {
-            val option = AMapLocationClientOption().apply {
-                isOnceLocation = false
-                interval = 5000
-                locationMode = AMapLocationClientOption.AMapLocationMode.Hight_Accuracy
-            }
-            setLocationOption(option)
             setLocationListener { loc ->
-                Log.i("---Test","code="+loc.errorCode+" errorInfo="+loc.errorInfo)
                 if (loc.errorCode == 0) {
                     _currentLatLng.value = LocationData(
                         LatLng(loc.latitude, loc.longitude),
@@ -54,11 +46,13 @@ class LocationRepositoryImpl @Inject constructor(
     }
 
     override fun startLocationUpdates() {
+        val option = AMapLocationClientOption().apply {
+            isOnceLocation = true
+            interval = 3000
+            locationMode = AMapLocationClientOption.AMapLocationMode.Hight_Accuracy
+        }
+        client.setLocationOption(option)
         client.startLocation()
-    }
-
-    override fun stopLocationUpdates() {
-        client.stopLocation()
     }
 
     override fun selectDestination(latLng: LatLng) {

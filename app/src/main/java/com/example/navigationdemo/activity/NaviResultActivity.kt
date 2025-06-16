@@ -15,18 +15,20 @@ import com.amap.api.maps.model.MyLocationStyle
 import com.amap.api.maps.model.PolylineOptions
 import com.example.navigationdemo.R
 import com.example.navigationdemo.databinding.NavigationResultActivityLayoutBinding
-import com.example.navigationdemo.model.NavigationData
+import com.example.navigationdemo.model.NaviData
+import dagger.hilt.android.AndroidEntryPoint
 
-class NavigationResultActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class NaviResultActivity : AppCompatActivity() {
     private lateinit var binding: NavigationResultActivityLayoutBinding
     private lateinit var aMap: AMap
-    private var navi: NavigationData? = null
+    private var navi: NaviData? = null
 
     companion object {
         private const val KEY_NAVI_DATA = "key_navi_data"
         private const val TAG = "NavigationResult"
-        fun launchActivity(context: Context, data: NavigationData) {
-            context.startActivity(Intent(context, NavigationResultActivity::class.java).apply {
+        fun launchActivity(context: Context, data: NaviData) {
+            context.startActivity(Intent(context, NaviResultActivity::class.java).apply {
                 putExtra(KEY_NAVI_DATA, data)
             })
         }

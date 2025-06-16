@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-data class NavigationData(
+data class NaviData(
     val distance: String?,
     val time: String?,
     val trace:List<NaviLatLng>?=null

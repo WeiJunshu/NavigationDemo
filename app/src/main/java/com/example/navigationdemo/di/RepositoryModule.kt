@@ -3,8 +3,6 @@ package com.example.navigationdemo.di
 import android.content.Context
 import com.example.navigationdemo.repository.LocationRepository
 import com.example.navigationdemo.repository.LocationRepositoryImpl
-import com.example.navigationdemo.repository.NaviRepository
-import com.example.navigationdemo.repository.NaviRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,10 +19,4 @@ object RepositoryModule {
     fun provideLocationRepository(
         @ApplicationContext context: Context
     ): LocationRepository = LocationRepositoryImpl(context)
-
-    @Provides
-    @Singleton
-    fun provideRouteRepository(
-        @ApplicationContext context: Context
-    ): NaviRepository = NaviRepositoryImpl(context)
 }

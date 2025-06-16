@@ -9,7 +9,6 @@ interface LocationRepository {
     val currentLatLng: LiveData<LocationData>
     val destinationLatLng: LiveData<LocationData>
     fun startLocationUpdates()
-    fun stopLocationUpdates()
     fun selectDestination(latLng: LatLng)
 
     fun release()
